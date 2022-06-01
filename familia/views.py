@@ -1,9 +1,15 @@
 from django.http import HttpResponse
 from .models import Persona
 from django.template import loader
+from django.shortcuts import render
 
+# Método Rendering
+def index(request):
+    lista_persona = Persona.objects.all()
+    context = {'lista_persona': lista_persona}
+    return render(request, "familia/index.html", context)
 
-
+"""
 def index(request):
     lista_persona = Persona.objects.all()
     template = loader.get_template('familia/index.html')
@@ -11,16 +17,20 @@ def index(request):
         'lista_persona': lista_persona,
     }
     return HttpResponse(template.render(context, request))
+"""
+def template1(request):
+    return render(request, 'familia/template1.html')
 
+def inicio(request):
+    return HttpResponse(" BIENVENIDO")
 
-""" 
+"""
 def index(request):
     lista_persona = Persona.objects.all()
     salida = lista_persona
     return HttpResponse(salida)
 """ 
 # Leave the rest of the views (detail, results, vote) unchanged
-
 
 """ 
 def index(request):

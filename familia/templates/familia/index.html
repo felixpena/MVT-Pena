@@ -1,3 +1,7 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'familia/css/styles.css' %}">
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +14,7 @@
 
     {% if lista_persona %}
     
+
     {% for persona in lista_persona %}
     <ul><li> {{ persona }} </li></ul>
         
@@ -18,11 +23,6 @@
 {% else %}
     <p>No hay lista en la base de datos.</p>
 {% endif %}
-
-
-
-
-
 
 </body>
 </html>

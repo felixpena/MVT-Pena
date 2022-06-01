@@ -11,4 +11,6 @@ urlpatterns = [
     path('<int:question_id>/results/', views.results, name='results'),
     # ex: /familia/5/vote/
     path('<int:question_id>/vote/', views.vote, name='vote'),
+    # template de boostrap
+    path('template1', views.template1)
 ]
